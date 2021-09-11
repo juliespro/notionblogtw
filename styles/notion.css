@@ -335,3 +335,14 @@
   border-image: linear-gradient(90.68deg, #b439df 0.26%, #e5337e 102.37%);
   border-image-slice: 1;
 }
+
+.notion-aside-table-of-contents-header{
+  display: none;
+}
+
+@media (min-width: 1300px) and (min-height: 300px){
+  .notion-page-content-has-aside {
+      flex-direction: row-reverse;
+      margin-left: calc(-1*(100vw - var(--notion-max-width)) / 2);
+  }
+}
