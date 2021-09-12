@@ -7,7 +7,7 @@ import {
     getBlockParentPage,
     uuidToId
 } from 'notion-utils'
-import * as types from 'notion-types'
+import * as types from 'packages/notion-types/src'
 
 import { Checkbox } from 'packages/react-notion-x/src/components/checkbox'
 import { PageIcon } from 'packages/react-notion-x/src/components/page-icon'

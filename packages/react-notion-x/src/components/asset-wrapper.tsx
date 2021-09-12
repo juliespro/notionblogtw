@@ -1,5 +1,5 @@
 import React from 'react'
-import { BaseContentBlock, Block } from 'notion-types'
+import { BaseContentBlock, Block } from '../../../notion-types/src'
 import { Asset } from './asset'
 import { cs } from '../utils'
 import { Text } from './text'
