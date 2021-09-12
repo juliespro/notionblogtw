@@ -12,10 +12,18 @@ import { PageBlock } from 'notion-types'
 import { Tweet, TwitterContextProvider } from 'react-static-tweets'
 
 // core notion renderer
-import { Code, Collection, CollectionRow } from 'react-notion-x'
+// import {
+//   Code,
+//   Collection,
+//   CollectionRow
+// } from 'react-notion-x'
+
 // import { NotionRenderer } from 'react-notion-x'
 // custom notion renderer
 import { NotionRenderer } from './renderer'
+import { Code } from './code'
+import { Collection } from './collection'
+import { CollectionRow } from './collection-row'
 
 // utils
 import { getBlockTitle } from 'notion-utils'
@@ -272,9 +280,9 @@ export const NotionPage: React.FC<types.PageProps> = ({
         searchNotion={searchNotion}
         pageFooter={comments}
         pageAside={pageAside}
-        pageHeader={
-          <PageHeader />
-        }
+        // pageHeader={
+        //   <PageHeader />
+        // }
         footer={
           <Footer
             isDarkMode={darkMode.value}

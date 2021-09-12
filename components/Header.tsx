@@ -9,7 +9,28 @@ import { cs } from 'packages/react-notion-x/src/utils'
 import { SearchDialog } from 'packages/react-notion-x/src/components/search-dialog'
 import { IoSunnyOutline, IoMoonSharp } from 'react-icons/io5'
 
-export const PageHeader: React.FC<{}> = () => {
+import styles from './styles.module.css'
+
+export const PageHeader: React.FC<{
+    isDarkMode: boolean
+    toggleDarkMode: () => void
+}> = ({ isDarkMode, toggleDarkMode }) => {
+
+    // Setup Darkmode toggles
+    const [hasMounted, setHasMounted] = React.useState(false)
+    const toggleDarkModeCb = React.useCallback(
+        (e) => {
+            e.preventDefault()
+            toggleDarkMode()
+        },
+        [toggleDarkMode]
+    )
+
+    React.useEffect(() => {
+        setHasMounted(true)
+    }, [])
+    // Done Darkmode toggles
+
     const {
         components,
         recordMap,
@@ -133,7 +154,17 @@ export const PageHeader: React.FC<{}> = () => {
                 </div>
 
                 <div className='rhs'>
-                    <IoMoonSharp />
+                    {hasMounted ? (
+                        <div className={styles.settings}>
+                            <a
+                                className={styles.toggleDarkMode}
+                                onClick={toggleDarkModeCb}
+                                title='Toggle dark mode'
+                            >
+                                {isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
+                            </a>
+                        </div>
+                    ) : null}
                     {hasSearch && (
                         <div
                             role='button'

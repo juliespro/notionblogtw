@@ -26,7 +26,10 @@ import { Text } from 'packages/react-notion-x/src/components/text'
 import { SyncPointerBlock } from 'packages/react-notion-x/src/components/sync-pointer-block'
 import { AssetWrapper } from 'packages/react-notion-x/src/components/asset-wrapper'
 
-import { cs, getListNumber, isUrl } from 'react-notion-x'
+
+import useDarkMode from 'use-dark-mode'
+
+import { cs, getListNumber, isUrl } from 'packages/react-notion-x/src/utils'
 
 interface BlockProps {
     block: types.Block
@@ -47,6 +50,8 @@ interface BlockProps {
 const tocIndentLevelCache: {
     [blockId: string]: number
 } = {}
+
+
 
 export const Block: React.FC<BlockProps> = (props) => {
     const {
@@ -175,6 +180,8 @@ export const Block: React.FC<BlockProps> = (props) => {
                     }
 
                     const hasPageCover = pageCover || page_cover
+                    // const darkMode = useDarkMode(false, { classNameDark: 'dark-mode' })
+                    // console.log(darkMode);
 
                     return (
                         <div
@@ -189,7 +196,10 @@ export const Block: React.FC<BlockProps> = (props) => {
                             <div className='notion-viewport' />
 
                             <div className='notion-frame'>
-                                <PageHeader />
+                                <PageHeader
+                                // isDarkMode={darkMode.value}
+                                // toggleDarkMode={darkMode.toggle}
+                                />
 
                                 <div className='notion-page-scroller'>
                                     {hasPageCover ? (
