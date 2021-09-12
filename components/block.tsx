@@ -180,7 +180,7 @@ export const Block: React.FC<BlockProps> = (props) => {
                     }
 
                     const hasPageCover = pageCover || page_cover
-                    // const darkMode = useDarkMode(false, { classNameDark: 'dark-mode' })
+                    const darkMode = useDarkMode(false, { classNameDark: 'dark-mode' })
                     // console.log(darkMode);
 
                     return (
@@ -188,7 +188,7 @@ export const Block: React.FC<BlockProps> = (props) => {
                             className={cs(
                                 'notion',
                                 'notion-app',
-                                darkMode ? 'dark-mode' : 'light-mode',
+                                darkMode.value ? 'dark-mode' : 'light-mode',
                                 blockId,
                                 className
                             )}
@@ -197,8 +197,8 @@ export const Block: React.FC<BlockProps> = (props) => {
 
                             <div className='notion-frame'>
                                 <PageHeader
-                                // isDarkMode={darkMode.value}
-                                // toggleDarkMode={darkMode.toggle}
+                                    isDarkMode={darkMode.value}
+                                    toggleDarkMode={darkMode.toggle}
                                 />
 
                                 <div className='notion-page-scroller'>

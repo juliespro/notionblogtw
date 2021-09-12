@@ -92,6 +92,7 @@ export const NotionRenderer: React.FC<NotionRendererProps> = ({
             fullPage={fullPage}
             rootPageId={rootPageId}
             darkMode={darkMode}
+
             previewImages={previewImages}
             showCollectionViewDropdown={showCollectionViewDropdown}
             showTableOfContents={showTableOfContents}
