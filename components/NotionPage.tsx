@@ -12,7 +12,10 @@ import { PageBlock } from 'notion-types'
 import { Tweet, TwitterContextProvider } from 'react-static-tweets'
 
 // core notion renderer
-import { NotionRenderer, Code, Collection, CollectionRow } from 'react-notion-x'
+import { Code, Collection, CollectionRow } from 'react-notion-x'
+// import { NotionRenderer } from 'react-notion-x'
+// custom notion renderer
+import { NotionRenderer } from './renderer'
 
 // utils
 import { getBlockTitle } from 'notion-utils'
@@ -34,6 +37,7 @@ import { Footer } from './Footer'
 import { PageSocial } from './PageSocial'
 import { GitHubShareButton } from './GitHubShareButton'
 import { ReactUtterances } from './ReactUtterances'
+import { PageHeader } from './Header'
 
 import styles from './styles.module.css'
 
@@ -268,6 +272,9 @@ export const NotionPage: React.FC<types.PageProps> = ({
         searchNotion={searchNotion}
         pageFooter={comments}
         pageAside={pageAside}
+        pageHeader={
+          <PageHeader />
+        }
         footer={
           <Footer
             isDarkMode={darkMode.value}
@@ -279,4 +286,5 @@ export const NotionPage: React.FC<types.PageProps> = ({
       <GitHubShareButton />
     </TwitterContextProvider>
   )
+
 }
