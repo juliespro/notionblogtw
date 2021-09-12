@@ -1,5 +1,5 @@
 import React from 'react'
-import { GoogleDriveBlock } from 'notion-types'
+import { GoogleDriveBlock } from '../../../notion-types/src'
 import { formatDistance } from 'date-fns'
 
 import { useNotionContext } from '../context'

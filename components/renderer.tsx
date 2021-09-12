@@ -1,6 +1,6 @@
 import React from 'react'
 import mediumZoom from 'medium-zoom'
-import { ExtendedRecordMap } from 'notion-types'
+import { ExtendedRecordMap } from 'packages/notion-types/src'
 
 import {
     MapPageUrl,
