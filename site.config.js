@@ -7,13 +7,13 @@ module.exports = {
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Julie\'s Pro',
-  domain: 'julies.pro',
-  author: 'Julie Hsieh',
+  name: '茱麗的學習筆記',
+  domain: 'tw.julies.pro',
+  author: '茱麗',
 
   // open graph metadata (optional)
-  description: 'Julie\'s Pro Blog: Travel, Research, and Coding',
-  socialImageTitle: 'Julie Hsieh',
+  description: '茱麗的學習筆記: 登山旅遊、學術生活與開發日誌',
+  socialImageTitle: '茱麗',
   socialImageSubtitle: 'Hello World! 👋',
 
   // social usernames (optional)
